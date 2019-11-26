@@ -1,13 +1,10 @@
 package project.springapiweather.model;
 
+import com.fasterxml.jackson.annotation.*;
+
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -28,6 +25,16 @@ public class Weather {
     private String icon;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    private String src;
+
+    public String getSrc() {
+        return src;
+    }
+
+    public void setSrc(String src) {
+        this.src = src;
+    }
 
     @JsonProperty("id")
     public Integer getId() {
@@ -79,14 +86,4 @@ public class Weather {
         this.additionalProperties.put(name, value);
     }
 
-    @Override
-    public String toString() {
-        return "Weather{" +
-                "id=" + id +
-                ", main='" + main + '\'' +
-                ", description='" + description + '\'' +
-                ", icon='" + icon + '\'' +
-                ", additionalProperties=" + additionalProperties +
-                '}';
-    }
 }

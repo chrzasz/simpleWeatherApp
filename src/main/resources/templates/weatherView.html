@@ -1,4 +1,4 @@
-!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Weather</title>
@@ -17,30 +17,13 @@
 <div class="container">
 
 
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <td>Description</td>
-            <td>Temp</td>
-
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each=" weathers : ${weather}">
-            <td th:text="${weathers.description}"></td>
-            <td th:text="${weathers.main}"></td>
-
-            </td>
-        </tr>
-
-
-        </tbody>
-    </table>
+    <span th:text="${weather.getWeather().get(0).getDescription()}"/><br>
+    Temp: <span th:text="${weather.getMain().getTemp()}"/> &deg;C<br>
+    Pressure: <span th:text="${weather.getMain().getPressure()}"/> hPa<br>
+    Humidity: <span th:text="${weather.getMain().getHumidity()}"/> %<br>
 
 
 </div>
-</div>
-
 </body>
+</html>
 
