@@ -26,16 +26,6 @@ public class Weather {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    private String src;
-
-    public String getSrc() {
-        return src;
-    }
-
-    public void setSrc(String src) {
-        this.src = src;
-    }
-
     @JsonProperty("id")
     public Integer getId() {
         return id;
@@ -64,16 +54,6 @@ public class Weather {
     @JsonProperty("description")
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @JsonProperty("icon")
-    public String getIcon() {
-        return icon;
-    }
-
-    @JsonProperty("icon")
-    public void setIcon(String icon) {
-        this.icon = icon;
     }
 
     @JsonAnyGetter
